@@ -1,10 +1,10 @@
-# 🛫 Travel Insurance: Claim Prediction
+# Travel Insurance: Claim Prediction
 
 > Proyek Capstone Data Mining — Prediksi Klaim Asuransi Perjalanan menggunakan Machine Learning
 
 ---
 
-## 👥 Tim
+## Tim
 
 | Nama | 
 |------|
@@ -15,7 +15,7 @@
 
 ---
 
-## 📋 Deskripsi Proyek
+## Deskripsi Proyek
 
 Proyek ini bertujuan membangun model klasifikasi *Machine Learning* untuk memprediksi apakah seorang pemegang polis asuransi perjalanan akan **mengajukan klaim** atau **tidak** selama perjalanan mereka.
 
@@ -27,7 +27,7 @@ Dengan model ini, perusahaan asuransi dapat:
 
 ---
 
-## 🎯 Target Prediksi
+## Target Prediksi
 
 | Label | Kelas | Keterangan |
 |-------|-------|------------|
@@ -38,7 +38,7 @@ Dengan model ini, perusahaan asuransi dapat:
 
 ---
 
-## 📁 Struktur Dataset
+## Struktur Dataset
 
 Dataset berisi informasi historis polis asuransi perjalanan dengan 11 kolom:
 
@@ -54,11 +54,11 @@ Dataset berisi informasi historis polis asuransi perjalanan dengan 11 kolom:
 | `Net Sales` | Numerikal | Nilai premi bersih yang dibayarkan |
 | `Commision (in value)` | Numerikal | Nilai komisi agen |
 | `Age` | Numerikal | Usia nasabah (tahun) |
-| `Claim` ⭐ | **Target** | 0 = Tidak Klaim, 1 = Klaim |
+| `Claim` | **Target** | 0 = Tidak Klaim, 1 = Klaim |
 
 ---
 
-## 🔄 Alur Kerja (Pipeline)
+## Alur Kerja (Pipeline)
 
 ```
 Data Loading
@@ -107,7 +107,7 @@ Feature Importance & Simpan Model (.pkl)
 
 ---
 
-## 🏆 Hasil Model
+## Hasil Model
 
 **Model Terbaik: Logistic Regression**
 
@@ -123,7 +123,7 @@ Logistic Regression unggul karena:
 
 ---
 
-## 🔍 Fitur Paling Berpengaruh
+## Fitur Paling Berpengaruh
 
 1. **Duration** — Perjalanan lebih lama → eksposur risiko lebih tinggi
 2. **Net Sales** — Premi lebih tinggi berkorelasi dengan cakupan pertanggungan yang lebih luas
@@ -132,7 +132,7 @@ Logistic Regression unggul karena:
 
 ---
 
-## ⚙️ Instalasi & Dependensi
+## Instalasi & Dependensi
 
 ### Prasyarat
 - Python 3.8+
@@ -168,7 +168,7 @@ lightgbm
 
 ---
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 1. **Clone repository ini**
    ```bash
@@ -188,7 +188,7 @@ lightgbm
 
 ---
 
-## 💾 Menggunakan Model yang Tersimpan
+## Menggunakan Model yang Tersimpan
 
 Setelah training, model disimpan sebagai file pickle. Gunakan kode berikut untuk memuat dan melakukan prediksi:
 
@@ -221,19 +221,19 @@ print(f"Probabilitas Klaim: {probabilitas[0]:.4f}")
 
 ---
 
-## ⚠️ Limitasi Model
+## Limitasi Model
 
 1. **Missing Value Gender (71.39%)** — Kontribusi fitur Gender terbatas; tidak dapat diandalkan untuk analisis demografis
 2. **Class Imbalance Ekstrem (98:2)** — Meski ditangani dengan RandomOverSampler, Precision kelas klaim tetap sangat rendah (~0.06)
 3. **Data Historis** — Model dapat menurun performanya jika terjadi perubahan mendadak pola nasabah, kondisi geopolitik, atau *force majeure*
 4. **Batasan Operasional:**
-   - ✅ Andal untuk: nasabah usia 18–80 tahun, durasi < 365 hari, destinasi umum
-   - ⚠️ Perlu hati-hati: durasi > 1000 hari, usia ekstrem, destinasi sangat jarang
+   - Andal untuk: nasabah usia 18–80 tahun, durasi < 365 hari, destinasi umum
+   - Perlu hati-hati: durasi > 1000 hari, usia ekstrem, destinasi sangat jarang
 5. **Tidak ada analisis temporal** — belum mempertimbangkan tren perubahan pola klaim dari waktu ke waktu
 
 ---
 
-## 💡 Rekomendasi Bisnis
+## Rekomendasi Bisnis
 
 1. **Dynamic Pricing** — Terapkan premi dinamis berbasis skor probabilitas klaim dari model
 2. **Efisiensi Cadangan Dana** — Gunakan prediksi model untuk memproyeksikan estimasi rasio klaim per periode
@@ -246,7 +246,7 @@ print(f"Probabilitas Klaim: {probabilitas[0]:.4f}")
 
 ---
 
-## 📊 Metrik Evaluasi
+## Metrik Evaluasi
 
 | Metrik | Keterangan |
 |--------|------------|
@@ -256,5 +256,3 @@ print(f"Probabilitas Klaim: {probabilitas[0]:.4f}")
 | **F1-Score** | Harmonic mean Precision & Recall sebagai ringkasan keseimbangan kedua metrik |
 
 ---
-
-*Proyek ini merupakan bagian dari Capstone Data Mining.*
